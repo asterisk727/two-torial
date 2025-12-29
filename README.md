@@ -8,6 +8,9 @@ TWO-TORIAL, a compendium of information and guides about arcade games. It also s
 
 <https://two-torial.maimaidxprism.plus/>
 
+> [!CAUTION]
+> **This is a mirror of the original TWO-TORIAL spice2x patcher. Read more info about this mirror [here](https://two-torial-info.maimaidxprism.plus/)**
+
 ## About
 
 This repository houses a guide dedicated to assisting individuals in configuring and navigating the setup process for various arcade games within this specific gaming genre. It covers essential aspects of installation, configuration, and troubleshooting, aiming to streamline the experience for users.

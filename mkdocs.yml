@@ -387,6 +387,9 @@ plugins:
   - search
   - git-revision-date-localized
 
+extra_javascript:
+  - infobox.js
+
 extra_css:
   - style.css
 
