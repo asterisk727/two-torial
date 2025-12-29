@@ -1,8 +1,8 @@
 # Game Patching (spice2x)
 
-!!! info "TWO-TORIAL Patcher"
+!!! info "Temporary Mirror of TWO-TORIAL Patcher"
 
-    URL: `https://sp2x.two-torial.xyz`  
+    URL: `https://sp2x.maimaidxprism.plus`  
 
     [Known spice2x patchers](/resources.md#spice2x-patchers)
 

@@ -4,14 +4,14 @@
 
 !!! tip "See [spice2x Patching](./extras/patchsp2x.md)"
 
-    - **TWO-TORIAL** - `https://sp2x.two-torial.xyz/` - **Our patcher for spice2x compatible games**
+    - **TWO-TORIAL** - `https://sp2x.maimaidxprism.plus/` - **(A temporary mirror of) our patcher for spice2x compatible games**
     - **DJTrackers** - `https://djtrackers.com/bemanipatcher/2x` - **Alternative patcher for anything we don't support**
 
 ## Web Patchers
 
 !!! tip "See [Web Patching](./extras/patchweb.md)"
 
-    - [TWO-TORIAL](https://patcher.two-torial.xyz/) - **Our [open-source](https://github.com/two-torial/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
+    - [TWO-TORIAL](https://webpatcher.maimaidxprism.plus) - **(A temporary mirror of) our [open-source](https://github.com/asterisk727/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
     - [mon's](https://mon.im/bemanipatcher/) - The longest lasting web patcher, supports a variety of **n-1 and older** games
 
 ## General

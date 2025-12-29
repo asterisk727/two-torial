@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://github.com/two-torial/two-torial/blob/master/docs/img/two-torial/github-banner.webp?raw=true">
+  <img src="https://github.com/asterisk727/two-torial/blob/master/docs/img/two-torial/github-banner.webp?raw=true">
 </p>
 
 #
 
 TWO-TORIAL, a compendium of information and guides about arcade games. It also serves as a comprehensive resource, providing a structured approach to setting up arcade games from specific franchises. This guide aims to offer clear instructions, troubleshooting tips, and essential information for enthusiasts and newcomers alike.
 
-<https://two-torial.xyz/>
+<https://two-torial.maimaidxprism.plus/>
 
 ## About
 
