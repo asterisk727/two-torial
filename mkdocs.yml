@@ -396,7 +396,7 @@ extra_css:
 extra:
   analytics:
     provider: custom
-    property: https://tuah-torial.goatcounter.com/count
+    property: https://three-torial.goatcounter.com/count
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/cZRUmEPK78
