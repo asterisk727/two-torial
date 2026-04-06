@@ -11,7 +11,7 @@
 A compendium of information and guides about arcade games.  
 By the community, for the community.
 
-[Join (or probably don't join) our (now-defunct) Discord server! :fontawesome-brands-discord:](https://discord.gg/cZRUmEPK78){ .md-button }
+[Our old Discord server is discontinued; stay tuned for a new one coming soon! :fontawesome-brands-discord:](#){ .md-button }
 </figure>
 
 <hr>

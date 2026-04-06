@@ -1,7 +1,7 @@
-site_name: two-torial.maimaidxprism.plus
-copyright: two-torial Team
+site_name: "RE: TWO-TORIAL"
+copyright: "The re: two-torial Team, continuing the two-torial Team"
 site_description: Arcade Games Troubleshooting Guide
-site_author: two-torial Team
+site_author: "The re: two-torial Team, continuing the two-torial Team"
 repo_url: https://github.com/asterisk727/two-torial/
 repo_name: GitHub
 
@@ -335,24 +335,24 @@ theme:
   palette:
     # Toggle for auto mode
     - media: "(prefers-color-scheme)"
-      primary: deep purple
-      accent: deep purple
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
     # Toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: deep purple
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: deep purple
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to system preference

@@ -4,14 +4,15 @@
 
 !!! tip "See [spice2x Patching](./extras/patchsp2x.md)"
 
-    - **TWO-TORIAL** - `https://sp2x.maimaidxprism.plus/` - **(A temporary mirror of) our patcher for spice2x compatible games**
+    - **573.moe** - `https://patcher.573.moe` - **The most up-to-date patcher for Bemani games, recommended**
     - **DJTrackers** - `https://djtrackers.com/bemanipatcher/2x` - **Alternative patcher for anything we don't support**
+    - **RE: TWO-TORIAL** - `https://sp2x.re-two-torial.xyz` - **DEPRECATED: Our patcher for spice2x compatible games. No longer updated.**
 
 ## Web Patchers
 
 !!! tip "See [Web Patching](./extras/patchweb.md)"
 
-    - [TWO-TORIAL](https://webpatcher.maimaidxprism.plus) - **(A temporary mirror of) our [open-source](https://github.com/asterisk727/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
+    - [RE: TWO-TORIAL](https://patcher.re-two-torial.xyz) - **(A temporary mirror of) our [open-source](https://github.com/asterisk727/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
     - [mon's](https://mon.im/bemanipatcher/) - The longest lasting web patcher, supports a variety of **n-1 and older** games
 
 ## General

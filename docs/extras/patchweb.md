@@ -19,7 +19,7 @@
 
 !!! tip ""
 
-    For this example, we'll be using our [(temporarily mirrored) web patcher](https://webpatcher.maimaidxprism.plus).  
+    For this example, we'll be using our [mirrored web patcher](https://patcher.re-two-torial.xyz).  
     Almost every other patcher looks and functions exactly the same as this one.   
 
     **If your game is not supported by our web patcher, please check [Resources](/resources.md#web-patchers) and use another web patcher.**
