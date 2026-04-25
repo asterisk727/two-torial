@@ -12,7 +12,7 @@
 
 !!! tip "See [Web Patching](./extras/patchweb.md)"
 
-    - [RE: TWO-TORIAL](https://patcher.re-two-torial.xyz) - **(A temporary mirror of) our [open-source](https://github.com/asterisk727/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
+    - [RE: TWO-TORIAL](https://patcher.re-two-torial.xyz) - **Our [open-source](https://github.com/asterisk727/webpatcher) web patcher** *(based on mon's)* **for games incompatible with spice2x**
     - [mon's](https://mon.im/bemanipatcher/) - The longest lasting web patcher, supports a variety of **n-1 and older** games
 
 ## General
