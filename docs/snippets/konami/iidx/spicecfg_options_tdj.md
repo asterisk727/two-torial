@@ -1,3 +1,3 @@
-    !!! tip "Optional: Enabling TDJ (Lightning mode)"
-    
-        You may want to enable `IITX TDJ Mode (-iidxtdj)` if your main monitor is 120 Hz capable.
+    !!! warning "Enabling TDJ (Lightning mode)"
+
+        You must enable `IITX TDJ Mode (-iidxtdj)` if you are trying to run the game in TDJ mode ([Read More](#standard-and-lightning-modes))
