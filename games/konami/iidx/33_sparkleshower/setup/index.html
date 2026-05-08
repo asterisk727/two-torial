@@ -9667,15 +9667,22 @@
 <strong>RE: TWO-TORIAL does not provide or distribute game data. Do not ask.</strong></p>
 </div>
 <h2 id="standard-and-lightning-modes">Standard and Lightning modes</h2>
-<div class="admonition note">
-<p>Before proceeding with the setup, it's important to understand the two cabinet types for IIDX:</p>
+<div class="admonition warning">
+<p class="admonition-title">Lightning mode requires a 120 Hz capable monitor</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Standard and Lightning modes</p>
+<p>The game data comes in two variants based on the <code>bm2dx.dll</code> file.<br />
+Before proceeding with the setup, it's very important to understand the two cabinet types for IIDX:</p>
 <ul>
 <li>
 <p><strong>Lightning (TDJ/LDJ-010)</strong>:  </p>
 <ul>
 <li>Runs at 120 FPS</li>
 <li>Requires a 120 Hz main monitor</li>
-<li>Optional second touchscreen 60 Hz monitor called a subscreen</li>
+<li>Second 60 Hz touchscreen monitor called a subscreen</li>
+<li>Disables physical keypad input; a virtual keypad is on the subscreen</li>
+<li>Optional video recording feature</li>
 </ul>
 </li>
 <li>
@@ -9684,11 +9691,13 @@
 <li>Runs at 60 FPS</li>
 <li>Requires a 60 Hz main monitor</li>
 <li>No subscreen</li>
+<li>Accepts physical keypad input</li>
 </ul>
 </li>
 </ul>
-<p>The game data comes in two variants based on the <code>bm2dx.dll</code> file.<br />
-You can patch an LDJ dll to run in TDJ mode, but this will disable video recording.  </p>
+<p>You can patch a LDJ dll to behave like a TDJ dll. This will enable all TDJ features <strong>except</strong> video recording.
+If you want to run in TDJ mode, you <strong>must</strong> also enable the <code>-iidxtdj</code> spice2x option <a href="#__tabbed_1_8">here</a>.</p>
+<p>You can also patch a TDJ dll to behave like a LDJ dll.</p>
 <p>For simplicity, we'll use "TDJ" for Lightning Mode and "LDJ" for Standard Mode throughout our guides.</p>
 </div>
 <h2 id="preparing-data">Preparing data</h2>
@@ -9902,9 +9911,9 @@ Browse the available options and hover over each one to view descriptions and co
 <p class="admonition-title">NVIDIA GPU users ONLY</p>
 <p>Enable <code>NVIDIA profile optimization (-nvprofile)</code> to let spice2x create an optimized profile for your game.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Optional: Enabling TDJ (Lightning mode)</p>
-<p>You may want to enable <code>IITX TDJ Mode (-iidxtdj)</code> if your main monitor is 120 Hz capable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Enabling TDJ (Lightning mode)</p>
+<p>You must enable <code>IITX TDJ Mode (-iidxtdj)</code> if you are trying to run the game in TDJ mode (<a href="#standard-and-lightning-modes">Read More</a>)</p>
 </div>
 </div>
 <div class="tabbed-block">
