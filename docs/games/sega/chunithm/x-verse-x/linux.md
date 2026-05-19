@@ -4,7 +4,7 @@
 
     CHUNITHM is built for Windows, but newer `chusan`-based versions can be run on Linux with Wine and DXVK.
 
-    This guide covers a VHDX-style data package, such as `Chusan245.vhdx`, and explains how to extract it, create a Wine prefix, map the required game drives, and launch `amdaemon` and `chusanApp` correctly.
+    This guide explains how to create a Wine prefix, map the required game drives, and launch `amdaemon` and `chusanApp` correctly on Linux.
 
 !!! warning "Compatibility"
 
@@ -12,7 +12,7 @@
 
     | Game | Version(s) | Caveats (if any) |
     |------|:----------:|:----------------:|
-    | CHUNITHM | `chusan`/NEW and newer | Tested with `Chusan245.vhdx` on Arch/EndeavourOS and NVIDIA. |
+    | CHUNITHM | `X-VERSE-X` | Tested on Arch/EndeavourOS and NVIDIA. |
 
     This guide was primarily written targetting arch-based systems running Wine with DXVK.  
     **Instructions should still be distro and DE agnostic, but your mileage may vary.**
@@ -24,12 +24,9 @@
     - A Linux system with:
         - `wine` with wow64 included
         - `winetricks` installed
-        - `qemu-img`, `qemu-nbd`, and `ntfs-3g` installed, if your data is inside a VHDX
         - Vulkan drivers installed for both 64-bit and 32-bit applications
-    - Compatible game data
-    - Unprotected `chusanApp.exe` and `amdaemon.exe` for your game version
-    - Segatools installed in the game's `📂bin` directory
-    - Your game's regular setup guide opened in another tab
+    - X-VERSE-X game data prepared using the regular setup guide
+    - Your regular X-VERSE-X setup guide opened in another tab
 
 === "Arch / EndeavourOS"
 
@@ -38,7 +35,7 @@
         Install the common packages with:
 
         ```sh
-        sudo pacman -Sy --needed qemu-img qemu-base ntfs-3g wine wine-mono wine-gecko winetricks vulkan-tools vulkan-icd-loader lib32-vulkan-icd-loader
+        sudo pacman -Sy --needed wine wine-mono wine-gecko winetricks vulkan-tools vulkan-icd-loader lib32-vulkan-icd-loader
         ```
 
         Install the 32-bit Vulkan driver matching your graphics card:
@@ -58,53 +55,28 @@
         - Wine with wow64 support
         - Winetricks
         - DXVK, installed through Winetricks or your package manager
-        - QEMU image tools, if using a VHDX
-        - NTFS userspace mount support, if using a VHDX
         - 32-bit Vulkan support for your GPU
 
-## Preparing data from VHDX
+## Preparing data
 
-!!! danger "Do not run directly from the read-only VHDX mount"
-
-    The game writes to `📂appdata`, `📂DEVICE`, and other files while running.  
-    Mount the VHDX read-only, then copy the files to a normal writable directory.
-
-!!! danger "Double check commands"
-
-    We provide ready-made commands for simplicity, however **don't blindly copy and execute them**.  
-    **ALWAYS** double check commands before running them, and substitute `REPLACE_THIS_PATH` with your own location.
-
-### Mounting the VHDX read-only
+--8<-- "docs/snippets/common/data_warning.md"
 
 !!! tip ""
 
-    Connect the VHDX through NBD:
+    Follow the regular X-VERSE-X setup guide first, up to and including:
 
-    ```sh
-    sudo modprobe nbd max_part=8
-    sudo qemu-nbd --read-only --connect=/dev/nbd0 REPLACE_THIS_PATH/Chusan245.vhdx
-    lsblk -f /dev/nbd0
-    ```
+    - Preparing data
+    - Installing option data
+    - Installing unprotected executables
+    - Installing ICFs
+    - Patching the game
+    - Installing and configuring Segatools
 
-    Mount the NTFS data partition:
+    This Linux guide assumes the prepared game application folder is available as `📂contents`.
 
-    ```sh
-    sudo mkdir -p /mnt/chusan245
-    sudo mount -t ntfs-3g -o ro,uid=$(id -u),gid=$(id -g),windows_names /dev/nbd0p2 /mnt/chusan245
-    ```
+    If you followed the regular setup guide exactly, this is the prepared `📂App` folder. You may either rename/copy it to `📂contents`, or edit the launcher scripts below so `CONTENTS` points at your `📂App` folder.
 
-### Copying the game data
-
-!!! tip ""
-
-    Create a writable `📂contents` directory and copy the mounted files into it:
-
-    ```sh
-    mkdir -p REPLACE_THIS_PATH/contents
-    rsync -a /mnt/chusan245/ REPLACE_THIS_PATH/contents/
-    ```
-
-    Your copied data should look similar to:
+    The expected structure is:
 
     ```
     📂contents
@@ -112,17 +84,22 @@
     ├── 📂data
     ├── 📂firm
     ├── 📂license
-    ├── ▶️pxGetHwinfo.exe
+    ├── 📄firewall.cfg
+    ├── ▶️game.bat
+    ├── ▶️pwGetHwinfo.exe
     ├── 📝pxGetHwInfo.ini
     └── 📄system_config.json
     ```
 
-    After copying, unmount and disconnect the VHDX:
+!!! warning "Writable data"
 
-    ```sh
-    sudo umount /mnt/chusan245
-    sudo qemu-nbd --disconnect /dev/nbd0
-    ```
+    Ensure the game directory is writable by your Linux user.  
+    The game writes to `📂bin/appdata`, `📂bin/DEVICE`, and other files while running.
+
+!!! danger "Double check commands"
+
+    We provide ready-made commands for simplicity, however **don't blindly copy and execute them**.  
+    **ALWAYS** double check commands before running them, and substitute `REPLACE_THIS_PATH` with your own location.
 
 ## Wine prefix
 
