@@ -1,0 +1,131 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths:
+      - .github/workflows/pr-preview.yml
+      - docs/**
+      - overrides/**
+      - mkdocs.yml
+      - pyproject.toml
+      - uv.lock
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Build site
+        run: uv run mkdocs build --clean
+
+      - name: Remove production custom domain
+        run: rm -f site/CNAME
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mkdocs-site
+          path: site
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy preview
+    needs: build
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mkdocs-site
+          path: site
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_SANDBOX_API_TOKEN }}
+          accountId: ${{ secrets.CF_SANDBOX_ACCOUNT_ID }}
+          command: >-
+            pages deploy site
+            --project-name=${{ vars.CF_SANDBOX_PAGES_PROJECT || 'two-torial-preview' }}
+            --branch=pr-${{ github.event.pull_request.number }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment preview URL
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs['pages-deployment-alias-url'] || steps.deploy.outputs['deployment-url'] }}
+        with:
+          script: |
+            const marker = '<!-- pr-preview:cloudflare-pages -->';
+            const previewUrl = process.env.PREVIEW_URL;
+            const body = `${marker}\nPR preview: ${previewUrl}`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+
+            const existing = comments.find((comment) =>
+              comment.user.type === 'Bot' && comment.body?.includes(marker)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body,
+              });
+            }
