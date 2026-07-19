@@ -9,7 +9,7 @@
 
     | Game | Version(s) | Caveats (if any) |
     |------|:----------:|:----------------:|
-    | Sound Voltex | `Exceed Gear` | Subscreen clicks don't work |
+    | Sound Voltex | `Exceed Gear/∇` | Subscreen clicks don't work |
     | DanceDanceRevolution | `World` | |
     | Mahjong Fight Girl | | |
 
@@ -77,7 +77,7 @@
 
 !!! tip ""
 
-    - Download the `sp2x-linux-setup.sh` script from [NotAkitake/sp2x-linux-setup](https://github.com/NotAkitake/sp2x-linux-setup/)
+    - Download the `sp2x-linux-setup.sh` script by [NotAkitake](https://github.com/NotAkitake). Script mirror: [here](https://gist.github.com/gnosticJade/8a06dfe3f8b7108894f2446d32e83982).
     - Place it next to your `📂contents` directory contaning compatible game files
     - Make the script executable `chmod +x sp2x-linux-setup.sh`
     - Run the script and follow instructions
