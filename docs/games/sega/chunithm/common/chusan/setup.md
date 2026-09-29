@@ -62,6 +62,7 @@
 | No TLS                       | ON             | Disable checking if the server is `HTTPS` or not. **Required if you plan to run a local server.** |
 | Bypass 1080p monitor check   | Either         | Disable checking if the monitor is 1080p when enabling 120FPS. Enable if you cannot set your monitor to 1080p. |
 | Bypass 120 Hz monitor check   | Either         | Disable checking if the monitor is **exactly 120 Hz** when enabling 120FPS. Enable if you cannot set your monitor to 120 Hz. |
+| Bypass AppUser check          | ON         | Available and required to run the game on **versions equal to or newer than X-VERSE-X** for most users. |
 
 ## Installing segatools
 

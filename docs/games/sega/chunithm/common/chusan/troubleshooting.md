@@ -39,6 +39,19 @@
     Double-click it to run. The script should run for 30 seconds, and you will get a file
     named `amdaemontest.txt` in `App\bin`, which you can send to help people troubleshoot your issue.
 
+### My game crashes when I scan my card!
+
+!!! tip ""
+
+    If your game version is X-VERSE-X or newer, most users **must** enable the
+    "Disable AppUser check" patch.
+
+    Enable the patch, save the new executable, and try carding in again.
+    Read our guide on webpatchers [here](/extras/patchweb.md).
+
+    For older versions, this patch is not necessary (and does not exist), and it's
+    likely a different issue entirely is causing your crash.
+
 ### My game takes a long time to boot!
 
 !!! tip ""
