@@ -48,7 +48,7 @@
 
     Editing this line **by itself will not change which mode** your game runs in!
 
-    Your dll must already be in the right mode **in addition** to setting this property properly. [(Read More)](../setup/#standard-and-lightning-modes)
+    Your dll must already be in the right mode **in addition** to setting this property properly. [(Read More)](setup.md#standard-and-lightning-modes)
 
     ^^**Always keep it up to date**^^ with what mode your game is configured to run in. 
 

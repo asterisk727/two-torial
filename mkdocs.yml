@@ -315,7 +315,7 @@ nav:
       - "Linux (Konami)": "extras/linux_konami.md"
   - Other Resources: resources.md
 
-not_in_nav: |
+exclude_docs: |
   snippets
   games/konami/iidx/common
   games/konami/sdvx/common
